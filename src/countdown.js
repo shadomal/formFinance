@@ -2,6 +2,9 @@
 const formatarDigito = (digito) => `0${digito}`.slice(-2);
 
 const atualizar = (tempo) => {
+    if(stop){
+        return;
+    }
     const segundos = document.getElementById('segundos');
     const minutos = document.getElementById('minutos');
     const horas = document.getElementById('horas');
@@ -19,15 +22,27 @@ const contagemRegressiva = (tempo) => {
     const pararContagem = () => clearInterval(id);
 
     const contar = () => {
-        if (tempo === 0 ){
+        if (tempo === 0) {
             pararContagem();
         }
-        atualizar (tempo);
+        atualizar(tempo);
         tempo--;
     }
-    const id = setInterval(contar,1000);
+    const id = setInterval(contar, 1000);
+}
+let count = 43200;
+let stop = false;
+function stopCount(){
+    stop = true;
+}
+function changeText() {
+    document.getElementById("pendente_text").innerHTML = "Aprovação Recusada"
+    stopCount();
+}
+function sucessText() {
+    document.getElementById("pendente_text").innerHTML = "Aprovação Realizada com Sucesso!";
+    
 }
 
 
-
-contagemRegressiva(130000);
+contagemRegressiva(count);

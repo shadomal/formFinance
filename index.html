@@ -61,26 +61,29 @@
             </div>
         </section>
         <section>
-            <div class="timer">
-                <div>
-                    <h1 id="horas">00</h1>
-                    <p>Horas</p>
+            <div>
+                <div class="timer">
+                    <div>
+                        <h1 id="horas">00</h1>
+                        <p>Horas</p>
+                    </div>
+                    <div>
+                        <h1  id="minutos">00</h1>
+                        <p>Minutos</p>
+                    </div>
+                    <div>
+                        <h1 id="segundos">00</h1>
+                        <p>Segundos</p>
+                    </div>
                 </div>
-                <div>
-                    <h1  id="minutos">00</h1>
-                    <p>Minutos</p>
+                <div class="button_sucess">
+                    <button onclick="sucessText()">ACEITAR</button>
+    
                 </div>
-                <div>
-                    <h1 id="segundos">00</h1>
-                    <p>Segundos</p>
+                <div class="button_recuse">
+                    <button onclick="changeText()">RECUSAR</button>
                 </div>
                 <script src="./src/countdown.js"></script>
-            </div>
-            <div class="button_sucess">
-                <button>ACEITAR</button>
-            </div>
-            <div class="button_recuse">
-                <button>RECUSAR</button>
             </div>
         </section>
     </div>
@@ -88,7 +91,7 @@
         <form action="#">
             <div class="form">
                 <div class="form_title">
-                    <h1>Pendente de Aprovação</h1>
+                    <h1 id="pendente_text">Pendente de Aprovação</h1>
                 </div>
                 <fieldset class="input_group">
                     <legend class="title">Dados da Proposta</legend>
