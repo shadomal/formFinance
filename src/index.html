@@ -11,61 +11,94 @@
 
 <body>
     <div class="container_left">
-        <div class="">
-            <div>
+        <div>
+            <div class="title_conteiner_left">
                 <h1>Análise Bancaria</h1>
             </div>
             <div class="bank">
-                <img src="" alt="Banco do Brasil">
-                <img src="" alt="Santander">
-                <img src="" alt="Itaú">
-                <img src="" alt="Pan">
-                <img src="" alt="Banco Verde">
-                <img src="" alt="Banco Daycoval">
-                <img src="" alt="Banco BelaVista">
-                <img src="" alt="Banco Safra">
-                <img src="" alt="Bradesco">
+                <img src="../img/banco-do-brasil-logo.png" alt="Banco do Brasil">
+                <img src="../img/santander.jpg" alt="Santander">
+                <img src="../img/itau.png" alt="Itaú">
+                <img src="../img/bancoPan.png" alt="Pan">
+                <img src="../img/logo-sicredi-icon-1024.png" alt="Banco Sicred">
+                <img src="../img/3-daycoval-financiamento-telefone.png" alt="Banco Daycoval">
+                <img src="../img/bvBank.png" alt="Banco BV">
+                <img src="../img/logo-app-safra.png" alt="Banco Safra">
+                <img src="../img/santander.jpg" alt="Bradesco">
             </div>
         </div>
         <div>
             <section>
-                <div>
+                <div class="title_conteiner_left">
                     <h1>Operador</h1>
                 </div>
                 <div class="bank">
-                    <img src="" alt="Santander">
-                    <img src="" alt="Banco do Brasil">
-                    <img src="" alt="Bradesco">
+                    <img src="../img/santander.jpg" alt="Santander">
+                    <img src="../img/banco-do-brasil-logo.png" alt="Banco do Brasil">
+                    <img src="../img/bradesco.png" alt="Bradesco">
                 </div>
             </section>
         </div>
         <section>
-            <div class="title">
-                <h1>Data</h1>
-            </div>
             <div class="status">
-                <div>
-                    <h4>Total</h4>
-                    <h4>49</h4>
-                </div>
-                <div>
-                    <h4>Pend. Aprovação</h4>
-                    <h4>7</h4>
-                </div>
-                <div>
-                    <h4>Aprovado</h4>
-                    <h4>20</h4>
-                </div>
-                <div>
-                    <h4>Em verificação</h4>
-                    <h4>14</h4>
-                </div>
-                <div>
-                    <h4>Recusados</h4>
-                    <h4>8</h4>
-                </div>
+                <fieldset>
+                    <div>
+                        <h4>Total: 49</h4>
+                    </div>
+                    <div>
+                        <h4>Pend. Aprovação: 7</h4>
+                    </div>
+                    <div>
+                        <h4>Aprovado: 20</h4>
+                    </div>
+                    <div>
+                        <h4>Em verificação: 14</h4>
+                    </div>
+                    <div>
+                        <h4>Recusados: 8</h4>
+                    </div>
+                </fieldset>
             </div>
+        </section>
+        <section>
+            <div class="timer">
+                <p id="timer"></p>
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Jan 5, 2024 17:00:00").getTime();
 
+                    // Update the count down every 1 second
+                    var x = setInterval(function () {
+
+                        // Get today's date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now and the count down date
+                        var distance = countDownDate - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("timer").innerHTML =  hours + "h "
+                            + minutes + "m " + seconds + "s ";
+
+                        // If the count down is over, write some text 
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("timer").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
+            </div>
+            <div class="button_sucess">
+                <button>ACEITAR</button>
+            </div>
+            <div class="button_recuse">
+                <button>RECUSAR</button>
+            </div>
         </section>
     </div>
     <div class="container">
@@ -75,7 +108,7 @@
                     <h1>Pendente de Aprovação</h1>
                 </div>
                 <fieldset class="input_group">
-                    <legend>Dados da Proposta</legend>
+                    <legend class="title">Dados da Proposta</legend>
                     <div class="input_box">
                         <label for="clientName">Client:</label>
                         <input id="clientName" type="text">
@@ -94,8 +127,8 @@
                     </div>
                 </fieldset>
                 <div>
-                    <fieldset class="input_group">
-                        <legend>Dados do Veiculo</legend>
+                    <fieldset class="input_group_vehicle">
+                        <legend class="title">Dados do Veiculo</legend>
                         <div>
                             <div class="input_box">
                                 <label for="marca">Marca:</label>
@@ -121,7 +154,7 @@
                     </fieldset>
                 </div>
                 <fieldset class="input_group">
-                    <legend>Simulação</legend>
+                    <legend class="title">Simulação</legend>
                     <div>
                         <div class="input_box">
                             <label for="price_entrada">Entrada: R$</label>
@@ -146,7 +179,7 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend class="title_objecao">Objeções apresentadas</legend>
+                    <legend class="title">Objeções apresentadas</legend>
                     <div class="objecao_text">
                         <p>Divergência e Insuficiência de informações com o banco de dados SPC-BRASIL.</p>
                         <p>Avaliação de Renda: As informações de renda não são compativeis com nossos critérios
