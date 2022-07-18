@@ -35,13 +35,17 @@ let stop = false;
 function stopCount(){
     stop = true;
 }
-function changeText() {
+function recuseText() {
     document.getElementById("pendente_text").innerHTML = "Aprovação Recusada"
+    document.getElementById("proposta_final").innerHTML = "Resultado Final: PROPOSTA RECUSADA";
+    document.getElementById("form_").style.background = "red";
     stopCount();
 }
 function sucessText() {
     document.getElementById("pendente_text").innerHTML = "Aprovação Realizada com Sucesso!";
-    
+    document.getElementById("proposta_final").innerHTML = "Resultado Final: PROPOSTA EFETIVADA";
+    document.getElementById("form_").style.background = "green";
+    stopCount();
 }
 
 
