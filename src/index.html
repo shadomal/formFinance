@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
     <title>Document</title>
-    <link href="/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-    <div>
-        <section>
-            <div class="title">
+    <div class="container_left">
+        <div class="">
+            <div>
                 <h1>Análise Bancaria</h1>
             </div>
             <div class="bank">
@@ -27,17 +26,19 @@
                 <img src="" alt="Banco Safra">
                 <img src="" alt="Bradesco">
             </div>
-        </section>
-        <section>
-            <div class="title">
-                <h1>Operador</h1>
-            </div>
-            <div class="bank">
-                <img src="" alt="Santander">
-                <img src="" alt="Banco do Brasil">
-                <img src="" alt="Bradesco">
-            </div>
-        </section>
+        </div>
+        <div>
+            <section>
+                <div>
+                    <h1>Operador</h1>
+                </div>
+                <div class="bank">
+                    <img src="" alt="Santander">
+                    <img src="" alt="Banco do Brasil">
+                    <img src="" alt="Bradesco">
+                </div>
+            </section>
+        </div>
         <section>
             <div class="title">
                 <h1>Data</h1>
@@ -66,97 +67,104 @@
             </div>
 
         </section>
-        <section>
-            <div class="timer"></div>
-            <div class="button sucess">
-                <button>ACEITAR</button>
-            </div>
-            <div class="button recuse">
-                <button>RECUSAR</button>
-            </div>
-        </section>
     </div>
-    <div>
-        <section>
-            <div class="status">PENDENTE DE APROVAÇÃO</div>
-        </section>
-        <section>
-            <form action="#" method="post">
-                <div class="proposta">
-                    <div class="title">
-                        <h3>Dados da proposta</h3>
-                    </div>
-                    <div class="form">
-                        <div class="bar">
-                            <h4>Client</h4> <input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>CPF/CNPJ</h4><input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Data de Nascimento</h4><input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Proposta</h4><input type="text">
-                        </div>
-                    </div>
+    <div class="container">
+        <form action="#">
+            <div class="form">
+                <div class="form_title">
+                    <h1>Pendente de Aprovação</h1>
                 </div>
-                <div class="veiculo">
-                    <div class="title">
-                        <h3>Dados do veiculo</h3>
+                <fieldset class="input_group">
+                    <legend>Dados da Proposta</legend>
+                    <div class="input_box">
+                        <label for="clientName">Client:</label>
+                        <input id="clientName" type="text">
                     </div>
-                    <div class="form">
-                        <div class="bar">
-                            <h4>Marca</h4> <input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Modelo e versão</h4><input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Cor</h4><input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Ano Modelo</h4><input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Ano de Fabricação</h4><input type="text">
-                        </div>
+                    <div class="input_box">
+                        <label for="cpf_or_cnpj">CPF/CNPJ:</label>
+                        <input id="cpf_or_cnpj" type="text">
                     </div>
+                    <div class="input_box">
+                        <label for="data_de_nascimento">Data de Nascimento:</label>
+                        <input id="data_de_nascimento" type="date">
+                    </div>
+                    <div class="input_box">
+                        <label for="proposta">Proposta:</label>
+                        <input id="proposta" type="number">
+                    </div>
+                </fieldset>
+                <div>
+                    <fieldset class="input_group">
+                        <legend>Dados do Veiculo</legend>
+                        <div>
+                            <div class="input_box">
+                                <label for="marca">Marca:</label>
+                                <input id="marca" type="number">
+                            </div>
+                            <div class="input_box">
+                                <label for="model_and_version">Modelo e versão:</label>
+                                <input id="model_and_version" type="number">
+                            </div>
+                            <div class="input_box">
+                                <label for="color">Cor:</label>
+                                <input id="color" type="text">
+                            </div>
+                            <div class="input_box">
+                                <label for="car_date">Ano modelo:</label>
+                                <input id="car_date" type="date">
+                            </div>
+                            <div class="input_box">
+                                <label for="fabric_car_date">Ano de Fabricação:</label>
+                                <input id="fabric_car_date" type="date">
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
-                <div class="simulacao">
-                    <div class="title">
-                        <h3>Simulacao</h3>
+                <fieldset class="input_group">
+                    <legend>Simulação</legend>
+                    <div>
+                        <div class="input_box">
+                            <label for="price_entrada">Entrada: R$</label>
+                            <input id="price_entrada" type="number">
+                        </div>
+                        <div class="input_box">
+                            <label for="car_value">Valor do Veiculo: R$</label>
+                            <input id="car_value" type="number">
+                        </div>
+                        <div class="input_box">
+                            <label for="parcel">Parcelas a partir de:</label>
+                            <select name="Parcelas a partir de:" id="parcel">
+                                <option value="first_proposal">36X</option>
+                                <option value="second_proposal">48X</option>
+                                <option value="third_proposal">60X</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="regularization">Regularização-R$</label>
+                            <input id="regularization" type="number">
+                        </div>
                     </div>
-                    <div class="form">
-                        <div class="bar">
-                            <h4>Entrada</h4> <input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Valor do Veículo</h4><input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Parcelas a partir de: </h4><input type="text">
-                        </div>
-                        <div class="bar">
-                            <h4>Regularização</h4><input type="text">
-                        </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="title_objecao">Objeções apresentadas</legend>
+                    <div class="objecao_text">
+                        <p>Divergência e Insuficiência de informações com o banco de dados SPC-BRASIL.</p>
+                        <p>Avaliação de Renda: As informações de renda não são compativeis com nossos critérios
+                            internos.</p>
+                        <p>Resultado Analítico: Cliente com alta probabilidade de aprovação mediante regularização
+                            cadastral.</p>
+                        <p>Resultado Final: PROPOSTA EFETIVADA</p>
                     </div>
-                </div>
-            </form>
-        </section>
-        <section>
-            <div class="title">
-                <h1>OBJEÇÕES APRENSENTADAS</h1>
+                </fieldset>
             </div>
-            <div class="description">
-                <p>Divergência e Insuficiência de informações com o banco de dados SPC-BRASIL.
-                    Avaliação de Renda: As informações de renda não são compativeis com nossos critérios internos.
-                    Resultado Analítico: Cliente com alta probabilidade de aprovação mediante regularização cadastral.
-                    Resultado Final: PROPOSTA EFETIVADA
-                </p>
+            <div class="form">
+                </fieldset>
             </div>
-        </section>
-
+            <div class="form">
+                <div>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 
