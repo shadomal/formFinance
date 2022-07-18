@@ -103,11 +103,16 @@ body {
 
 .status {
     background-color: #C4C4C4;
+    padding: 10px;
 }
 
 .timer {
+    display: flex;
     text-align: center;
-    font-size: 60px;
+    font-size: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2vw;
 }
 
 .button_sucess {

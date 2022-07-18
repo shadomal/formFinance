@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -62,36 +62,19 @@
         </section>
         <section>
             <div class="timer">
-                <p id="timer"></p>
-                <script>
-                    // Set the date we're counting down to
-                    var countDownDate = new Date("Jan 5, 2024 17:00:00").getTime();
-
-                    // Update the count down every 1 second
-                    var x = setInterval(function () {
-
-                        // Get today's date and time
-                        var now = new Date().getTime();
-
-                        // Find the distance between now and the count down date
-                        var distance = countDownDate - now;
-
-                        // Time calculations for days, hours, minutes and seconds
-                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                        // Output the result in an element with id="demo"
-                        document.getElementById("timer").innerHTML =  hours + "h "
-                            + minutes + "m " + seconds + "s ";
-
-                        // If the count down is over, write some text 
-                        if (distance < 0) {
-                            clearInterval(x);
-                            document.getElementById("timer").innerHTML = "EXPIRED";
-                        }
-                    }, 1000);
-                </script>
+                <div>
+                    <h1 id="horas">00</h1>
+                    <p>Horas</p>
+                </div>
+                <div>
+                    <h1  id="minutos">00</h1>
+                    <p>Minutos</p>
+                </div>
+                <div>
+                    <h1 id="segundos">00</h1>
+                    <p>Segundos</p>
+                </div>
+                <script src="./src/countdown.js"></script>
             </div>
             <div class="button_sucess">
                 <button>ACEITAR</button>
